@@ -15,7 +15,7 @@ library(extrafont)
 # get the csv file
 genuscounts <<- read.csv(file.choose(), header = TRUE, sep = ",")
 
-pdf(file = "genus_Piecharts.pdf", width = 8.5, height = 11, onefile = TRUE, family = "Arial Unicode MS")
+pdf(file = "genus_Piecharts.pdf", width = 8.5, height = 11, onefile = TRUE) #family = "Arial Unicode MS")
 
 #loop through the data frame and find the top ten for each 
 par(mfrow=c(2,1))
@@ -48,11 +48,11 @@ for(i in 2:ncol(genuscounts)) {
   # can use font.main = '' to adjust the font of main title
   textX = 0
   textY = 0.88
-  text(textX,textY, samplename, cex=3.5, font= 6, family = "Arial Rounded MT Bold")
+  text(textX,textY, samplename, cex=3.5, font= 6) #family = "Arial Rounded MT Bold")
   legend("bottomleft", lbls, cex=0.75, fill=colors)
   textX = 0
   textY = 0.65
-  text(textX,textY,'This sample\' s microbiome, broken down by genus:', cex=1.25, font=3, family="Arial Unicode MS")
+  text(textX,textY,'This sample\' s microbiome, broken down by genus:', cex=1.25, font=3) #family="Arial Unicode MS")
   textX = 0.5
   textY = -0.75
   text(textX,textY,' DISCLAIMER:\n Results cannot be\n used to draw any\n conclusions about\n health information.', cex=0.7, adj=c(0,NA), font=0.75, col = "gray46", family="Georgia")
